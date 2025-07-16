@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+  
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyas Darade | Data Science | Machine Learning</title>
+    <meta name="description" content="Data science portfolio of Shreyas Darade. Projects, resume, and contact info." />
+    <meta name="theme-color" content="#00A896" />
+
+    <!-- AOS Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/base.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+    </script>
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h2 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      code {
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+
+    <!-- Theme Persistence -->
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      }
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      }
+    </script>
+  </head>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+  <body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-lg font-semibold tracking-tight">
+          <span class="text-[#00A896]">Data Scientist & ML Enthusiast</span>
+        </div>
+        <nav class="flex space-x-6 items-center">
+          <a href="#overview" class="hover:text-[#00A896] focus:outline-none focus-visible:ring focus-visible:ring-[#00A896]">Overview</a>
+          <a href="#projects" class="hover:text-[#00A896] focus:outline-none focus-visible:ring focus-visible:ring-[#00A896]">Projects</a>
+          <a href="resume.pdf" target="_blank" class="hover:text-[#00A896] focus:outline-none focus-visible:ring focus-visible:ring-[#00A896]">Resume</a>
+          <button onclick="toggleTheme()" class="ml-2 relative inline-flex items-center h-6 rounded-full w-11 bg-gray-300 dark:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-[#00A896]">
+            <span class="sr-only">Toggle Dark Mode</span>
+            <span class="inline-block h-4 w-4 transform bg-white rounded-full transition-transform duration-300 translate-x-1 dark:translate-x-6"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="overview" class="max-w-3xl mx-auto px-4 pt-36 pb-20 text-center">
+      <h1 class="text-6xl sm:text-5xl font-bold mb-12 text-center leading-snug"
+          style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+          x-data="{
+            full: `Hi, I’m Shreyas Darade`.split(''),
+            highlight: 'Shreyas Darade',
+            visible: [],
+            isName(char, i) {
+              return this.full.slice(i, i + this.highlight.length).join('').startsWith(this.highlight);
+            }
+          }"
+          x-init="full.forEach((char, i) => setTimeout(() => visible[i] = char === ' ' ? '\u00A0' : char, i * 100))"
+      >
+      <template x-for="(char, i) in full">
+          <span :class="{
+              'text-[#2563EB]': i >= 8 && i < 23, 
+              'opacity-100': visible[i],
+              'opacity-0': !visible[i]
+            }"
+            class="inline-block transition duration-300"
+            x-text="visible[i] || ' '"
+          ></span>
+      </template>
+      </h1>
+
+
+      <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Data Scientist | AI/ML Engineer | Problem Solver
+      </p>
+
+      <p class="mt-4 text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+      I'm a data scientist passionate about solving real-world business problems with data. Currently pursuing my masters in Carnegie Mellon University with my coursework focused on Data Science, ML models, NLP and Big Data. I have a 3.94 GPA with Deans List in both my previous semesters.
+      </p>
+    </main>
+
+    <section id="skills" class="bg-white dark:bg-gray-950 py-20 px-6 border-t border-gray-200 dark:border-gray-800">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-10"
+            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+          Key Skills & Tools
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+          
+          <!-- Group block -->
+          <div class="group rounded-xl border-2 border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.01]">
+            <h3 class="text-xl font-semibold mb-4 text-black dark:text-white">Programming</h3>
+            <div class="flex flex-wrap gap-2 text-sm font-mono">
+              <span class="px-2 py-1 rounded text-white bg-rose-500">Python</span>
+              <span class="px-2 py-1 rounded text-white bg-sky-600">SQL</span>
+              <span class="px-2 py-1 rounded text-white bg-amber-600">Java</span>
+            </div>
+          </div>
+
+          <!-- Data Science -->
+          <div class="group rounded-xl border-2 border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.01]">
+            <h3 class="text-xl font-semibold mb-4 text-black dark:text-white">Data Science</h3>
+            <div class="flex flex-wrap gap-2 text-sm font-mono">
+              <span class="px-2 py-1 rounded bg-purple-600 text-white">Scikit-Learn</span>
+              <span class="px-2 py-1 rounded bg-pink-500 text-white">PyTorch</span>
+              <span class="px-2 py-1 rounded bg-cyan-600 text-white">XGBoost</span>
+              <span class="px-2 py-1 rounded bg-indigo-500 text-white">NLP</span>
+              <span class="px-2 py-1 rounded bg-violet-500 text-white">Clustering</span>
+              <span class="px-2 py-1 rounded bg-lime-600 text-white">Regression</span>
+              <span class="px-2 py-1 rounded bg-emerald-600 text-white">Unsupervised Learning</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="group rounded-xl border-2 border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.01]">
+            <h3 class="text-xl font-semibold mb-4 text-black dark:text-white">Tools & Platforms</h3>
+            <div class="flex flex-wrap gap-2 text-sm font-mono">
+              <span class="px-2 py-1 rounded bg-emerald-500 text-white">Power BI</span>
+              <span class="px-2 py-1 rounded bg-blue-600 text-white">Tableau</span>
+              <span class="px-2 py-1 rounded bg-orange-500 text-white">Git</span>
+              <span class="px-2 py-1 rounded bg-lime-500 text-white">Spark</span>
+              <span class="px-2 py-1 rounded bg-sky-500 text-white">Jupyter</span>
+              <span class="px-2 py-1 rounded bg-rose-600 text-white">MapReduce</span>
+
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="group rounded-xl border-2 border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.01]">
+            <h3 class="text-xl font-semibold mb-4 text-black dark:text-white">Soft Skills</h3>
+            <div class="flex flex-wrap gap-2 text-sm font-mono">
+              <span class="px-2 py-1 rounded bg-yellow-500 text-white">Stakeholder Mgmt</span>
+              <span class="px-2 py-1 rounded bg-indigo-600 text-white">Product Strategy</span>
+              <span class="px-2 py-1 rounded bg-teal-500 text-white">Storytelling</span>
+              <span class="px-2 py-1 rounded bg-pink-600 text-white">Consulting</span>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <!-- START OF PROJECTS SECTION -->
+    <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
+            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+          Projects
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- CARD 1 -->
+          <div x-data="{ open: false }" class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="images/p1.jpg" alt="Carbon Emission Predictor" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-1"
+                  style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Carbon Emission Predictor
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Predicts CO₂ output and suggests improvements for sustainability.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-white">
+                <span class="bg-[#00A896] px-2 py-1 rounded">Python</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">XGBoost</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Tkinter</span>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <a href="#" class="text-[#00A896] hover:underline text-sm">GitHub →</a>
+                <button @click="open = true" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#00A896]">Details</button>
+              </div>
+            </div>
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                @click.away="open = false" @keydown.escape.window="open = false">
+              <div class="bg-white dark:bg-gray-900 rounded-xl max-w-xl w-full mx-4 p-6 space-y-4">
+                <h3 class="text-2xl font-bold"
+                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                  Carbon Emission Predictor
+                </h3>
+                <img src="https://source.unsplash.com/600x300/?environment,ai" class="rounded-md" />
+                <p class="text-gray-700 dark:text-gray-300">Interactive app that estimates emissions from lifestyle inputs and recommends more sustainable choices.</p>
+                <div class="text-right">
+                  <button @click="open = false" class="px-4 py-2 bg-[#00A896] text-white rounded hover:bg-teal-600">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div x-data="{ open: false }" class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="https://source.unsplash.com/600x300/?chess,board" alt="Chess Blunder Detector" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-1"
+                  style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Chess Blunder Detector
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Predicts mistakes in chess games using historical match data.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-white">
+                <span class="bg-[#00A896] px-2 py-1 rounded">PyTorch</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Lichess API</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Matplotlib</span>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <a href="#" class="text-[#00A896] hover:underline text-sm">GitHub →</a>
+                <button @click="open = true" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#00A896]">Details</button>
+              </div>
+            </div>
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                @click.away="open = false" @keydown.escape.window="open = false">
+              <div class="bg-white dark:bg-gray-900 rounded-xl max-w-xl w-full mx-4 p-6 space-y-4">
+                <h3 class="text-2xl font-bold"
+                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                  Chess Blunder Detector
+                </h3>
+                <img src="https://source.unsplash.com/600x300/?chess,ai" class="rounded-md" />
+                <p class="text-gray-700 dark:text-gray-300">Built a move-by-move blunder prediction engine trained on millions of games and visualized predictions interactively.</p>
+                <div class="text-right">
+                  <button @click="open = false" class="px-4 py-2 bg-[#00A896] text-white rounded hover:bg-teal-600">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div x-data="{ open: false }" class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="https://source.unsplash.com/600x300/?newyork,cityscape" alt="NYC Airbnb Insights" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-1"
+                  style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                NYC Airbnb Insights
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Visualized pricing and availability trends across boroughs.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-white">
+                <span class="bg-[#00A896] px-2 py-1 rounded">Pandas</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Seaborn</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Jupyter</span>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <a href="#" class="text-[#00A896] hover:underline text-sm">GitHub →</a>
+                <button @click="open = true" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#00A896]">Details</button>
+              </div>
+            </div>
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                @click.away="open = false" @keydown.escape.window="open = false">
+              <div class="bg-white dark:bg-gray-900 rounded-xl max-w-xl w-full mx-4 p-6 space-y-4">
+                <h3 class="text-2xl font-bold"
+                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                  NYC Airbnb Insights
+                </h3>
+                <img src="https://source.unsplash.com/600x300/?real-estate,data" class="rounded-md" />
+                <p class="text-gray-700 dark:text-gray-300">Performed EDA on NYC Airbnb dataset to uncover pricing trends, neighborhood patterns, and optimal listing strategies.</p>
+                <div class="text-right">
+                  <button @click="open = false" class="px-4 py-2 bg-[#00A896] text-white rounded hover:bg-teal-600">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div x-data="{ open: false }" class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="https://source.unsplash.com/600x300/?uber,data" alt="Uber Demand Forecasting" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-1"
+                  style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Uber Demand Forecasting
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Predicted ride demand spikes across Pittsburgh neighborhoods.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-white">
+                <span class="bg-[#00A896] px-2 py-1 rounded">Time Series</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">ARIMA</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">Plotly</span>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <a href="#" class="text-[#00A896] hover:underline text-sm">GitHub →</a>
+                <button @click="open = true" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#00A896]">Details</button>
+              </div>
+            </div>
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                @click.away="open = false" @keydown.escape.window="open = false">
+              <div class="bg-white dark:bg-gray-900 rounded-xl max-w-xl w-full mx-4 p-6 space-y-4">
+                <h3 class="text-2xl font-bold"
+                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                  Uber Demand Forecasting
+                </h3>
+                <img src="https://source.unsplash.com/600x300/?pittsburgh,traffic" class="rounded-md" />
+                <p class="text-gray-700 dark:text-gray-300">Time-series model using ARIMA to help Uber operations prepare for demand surges in different zones.</p>
+                <div class="text-right">
+                  <button @click="open = false" class="px-4 py-2 bg-[#00A896] text-white rounded hover:bg-teal-600">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div x-data="{ open: false }" class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="https://source.unsplash.com/600x300/?reviews,ecommerce" alt="Product Review Classifier" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-1"
+                  style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Product Review Classifier
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Classified product reviews into sentiment categories using ML.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-white">
+                <span class="bg-[#00A896] px-2 py-1 rounded">TF-IDF</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">LogReg</span>
+                <span class="bg-[#00A896] px-2 py-1 rounded">NLP</span>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <a href="#" class="text-[#00A896] hover:underline text-sm">GitHub →</a>
+                <button @click="open = true" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#00A896]">Details</button>
+              </div>
+            </div>
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                @click.away="open = false" @keydown.escape.window="open = false">
+              <div class="bg-white dark:bg-gray-900 rounded-xl max-w-xl w-full mx-4 p-6 space-y-4">
+                <h3 class="text-2xl font-bold"
+                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                  Product Review Classifier
+                </h3>
+                <img src="https://source.unsplash.com/600x300/?sentiment,analysis" class="rounded-md" />
+                <p class="text-gray-700 dark:text-gray-300">Preprocessed and vectorized Amazon product reviews, then trained a classifier to distinguish positive vs. negative reviews with 87% accuracy.</p>
+                <div class="text-right">
+                  <button @click="open = false" class="px-4 py-2 bg-[#00A896] text-white rounded hover:bg-teal-600">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+<!-- END OF PROJECTS SECTION -->
+
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-400">
+      © 2025 Shreyas Darade · <a href="mailto:you@example.com" class="hover:text-[#00A896]">Contact</a>
+    </footer>
+
+    <!-- Alpine.js -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </body>
+</html>
